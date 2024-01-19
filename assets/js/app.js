@@ -19,7 +19,30 @@ function DisegnaTabella() {
     }
 
     div1.appendChild(tabella);
+}
 
+function estraiNumero(){
+    var num =  Math.floor(Math.random() * 100 + 1);
+    alert(num);
+    let div1 = document.getElementById('div1');
+    let tabella = document.createElement("table");
+
+    var i = 1;
+    for (var r = 0; r < righe; r++) {
+        let row = document.createElement("tr");
+        for (var c = 0; c < colonne; c++, i++) {
+            let cell = document.createElement("td");
+            let cellText = document.createTextNode(i);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            if (cellText == num) cell.style.backgroundColor = 'red';
+        }
+        tabella.appendChild(row);
+    }
+
+    div1.
 }
 
 DisegnaTabella();
+
+
