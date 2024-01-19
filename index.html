@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Tombola</title>
+
+    <style>
+        body {
+            user-select: none;
+        }
+
+        #div1 {
+            margin: 10px;
+            font-size: 1.25em;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid #7f7f7f;
+        }
+
+        td {
+            border: 1px solid #7f7f7f;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .hidden {
+            color: white;
+        }
+
+        button {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-size: xx-large;
+            padding: 10px;
+            border-radius: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Gioco della tombola</h1>
+    <div id="div1"></div>
+    <button onclick="Estrai()">ESTRAI</button>
+
+    <script>
+        
+        let righe = 10;
+        let colonne = 10;
+       
+        function DisegnaTabella() {
+
+            let div1 = document.getElementById('div1');
+            let tabella = document.createElement("table");
+
+            var i = 1;
+            for (var r = 0; r < righe; r++) {
+                let row = document.createElement("tr");
+                for (var c = 0; c < colonne; c++, i++) {
+                    let cell = document.createElement("td");
+                    let cellText = document.createTextNode(i);
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                }
+                tabella.appendChild(row);
+            }
+
+            div1.appendChild(tabella);
+
+        }
+        
+        DisegnaTabella();
+        
+    </script>
+
+</body>
+
+</html>
