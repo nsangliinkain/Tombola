@@ -4,11 +4,7 @@ let numeriEstratti = [];
 
 function DisegnaTabella() {
     let div1 = document.getElementById('div1');
-    while (div1.firstChild) {
-        div1.removeChild(div1.firstChild);
-    }
     let tabella = document.createElement("table");
-
     var i = 1;
     for (var r = 0; r < righe; r++) {
         let row = document.createElement("tr");
@@ -25,8 +21,14 @@ function DisegnaTabella() {
     div1.appendChild(tabella);
 }
 
-function estraiNumero(){
-    var num =  Math.floor(Math.random() * 100 + 1);
+function estraiNumero() {
+    var num = Math.floor(Math.random() * 100 + 1);
+    let div1 = document.getElementById('div1');
+    while (div1.firstChild) {
+        div1.removeChild(div1.firstChild);
+    }
     numeriEstratti.push(num);
     DisegnaTabella();
 }
+
+DisegnaTabella();
